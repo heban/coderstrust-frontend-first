@@ -5,8 +5,11 @@ Prezentacja stworzona dla szkoły programowania CodersTrust.
 Z prezentacji dowiesz się czym jest język JavaScript, jakie ma znaczenie dla współczesnego Internetu oraz poznasz jego podstawy.
 
 ### Jak uruchomić?
-Odpal index.html i ciesz się prezentacją :)
+Najpierw instalujemy zależności poleceniem `yarn`.
+Następnie wystarczy w konsoli wpisać `yarn start` aby skrypt uruchomił prezentacje w oknie przeglądarki.
+
+Aby wybudować wersję produkcyjną, zdolną do uruchomienia na serwerze, wpisz w konsoli `yarn build`. Polecenie to wybuduje prezentacje w katalogu `build`, który następnie należy uruchomić na lokalnym serwerze np. z użyciem modułu `serve`.
 
 ### Jak to zostało zrobione?
 
-* [Reveal.js](https://revealjs.com/#/) - framework do tworzenia prezentacji w HTML5
+* [Spectacle](https://github.com/FormidableLabs/spectacle) - biblioteka do tworzenia prezentacji w React.js
