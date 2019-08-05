@@ -921,19 +921,423 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
             Operatory arytmetyczne
           </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>+</strong> <Word>Dodawanie</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10 + 2;  // 12'}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>-</strong> <Word>Odejmowanie</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10 - 2;  // 8'}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>*</strong> <Word>Mnożenie</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10 * 2;  // 20'}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>/</strong> <Word>Dzielenie</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10 / 2;  // 5'}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>%</strong> <Word>Dzielenie modulo (reszta z dzielenia)</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10 % 2;  // 0'}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Operatory arytmetyczne
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>**</strong> <Word>Potęgowanie (ES2016)</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10 % 2;  // 0'}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>++</strong> <Word>Inkrementacja</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x++;         // 11`}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>--</strong> <Word>Dekrementacja</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x--;         // 9`}
+                margin="12px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
             Operatory przypisania
           </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let x = 10;'}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>+=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x += 10;         // 20, równoznaczne z: x = x + 10`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>-=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x -= 10;         // 0, równoznaczne z: x = x - 10`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>*=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x *= 10;         // 100, równoznaczne z: x = x * 10`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Operatory przypisania
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>/=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x /= 10;         // 1, równoznaczne z: x = x / 10`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>%=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x %= 10;         // 0, równoznaczne z: x = x % 10`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>**=</strong>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10;
+x **= 2;         // 100, równoznaczne z: x = x ** 2`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Operatory porównania
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>==</strong> <Word>Porównanie, nie sprawdza typów</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = '10';
+x == y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>===</strong> <Word>Porównanie ze sprawdzeniem typów</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = '10';
+x === y;             // false`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>!=</strong> <Word>Sprawdzenie różności, bez typów</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = '10';
+x != y;             // false`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>!==</strong> <Word>Sprawdzenie różności, wraz z typami</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = '10';
+x !== y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Operatory porównania
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>></strong> <Word>Większe od</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = 9;
+x > y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>&lt;</strong> <Word>Mniejsze od</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = 9;
+x < y;             // false`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>>=</strong> <Word>Większe, lub równe od</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = 10;
+x >= y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>&lt;=</strong> <Word>Mniejsze, lub równe od</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = 10, y = 9;
+x <= y;             // false`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
             Operatory logiczne
           </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>&&</strong> <Word>Koniunkcja (logiczne AND)</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = true, y = false;
+x && y;             // false`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>||</strong> <Word>Alternatywa (logiczne OR)</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = true, y = false;
+x || y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>!</strong> <Word>Negacja (w logice ~)</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = true, y = false;
+!x;             // false
+!y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={6} lineHeight={1} textAlign="left" textColor="secondary">
@@ -962,22 +1366,22 @@ export default class Presentation extends React.Component {
           <ESLayout>
             <List>
               <Appear>
-                <ListItem>JavaScript - dynamiczny język stron WWW, odpowiada za zachowanie</ListItem>
+                <ListItem textSize={32}>JavaScript - dynamiczny język stron WWW, odpowiada za zachowanie</ListItem>
               </Appear>
               <Appear>
-                <ListItem>Zmienne - pojemniki na dane</ListItem>
+                <ListItem textSize={32}>Zmienne - pojemniki na dane</ListItem>
               </Appear>
               <Appear>
-                <ListItem>Typy danych - określają rodzaj zmiennej i decydują o możliwych operacjach</ListItem>
+                <ListItem textSize={32}>Typy danych - określają rodzaj zmiennej i decydują o możliwych operacjach</ListItem>
               </Appear>
               <Appear>
-                <ListItem>Komentarze - pozwalają na opisanie fragmentów kodu</ListItem>
+                <ListItem textSize={32}>Komentarze - pozwalają na opisanie fragmentów kodu</ListItem>
               </Appear>
               <Appear>
-                <ListItem>Instrukcje arytmetyczne i logiczne - pozwalają na wykonywanie operacji na zmiennych</ListItem>
+                <ListItem textSize={32}>Instrukcje arytmetyczne i logiczne - pozwalają na wykonywanie operacji na zmiennych</ListItem>
               </Appear>
               <Appear>
-                <ListItem>Instrukcje warunkowe if/else oraz switch - sterują przepływem programu</ListItem>
+                <ListItem textSize={32}>Instrukcje warunkowe if/else oraz switch - sterują przepływem programu</ListItem>
               </Appear>
             </List>
           </ESLayout>
