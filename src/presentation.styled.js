@@ -146,3 +146,15 @@ export const KeywordCloud = styled.div`
     }
   }
 `;
+
+export const VarImage = styled(Image)`
+  && {
+    margin: 32px auto 0 auto;
+    max-width: 240px;
+  }
+`;
+
+export const CustomParagraph = styled.span`
+  display: block;
+  margin: 10px 0;
+`;

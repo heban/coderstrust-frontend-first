@@ -1,3 +1,5 @@
+/* eslint import/no-webpack-loader-syntax: off */
+
 // Import React
 import React from 'react';
 
@@ -15,6 +17,8 @@ import {
   BlockQuote,
   Quote,
   Cite,
+  CodePane,
+  Code,
 } from 'spectacle';
 import preloader from "spectacle/lib/utils/preloader";
 
@@ -27,6 +31,10 @@ import Me from './images/pablo.jpg';
 import LetsRock from './images/letsrock.gif';
 import FirstPage from './images/first-page.jpg';
 import TooMuch from './images/es.gif';
+import bagIntro from './images/bag-intro.png';
+import bagOne from './images/bag.png';
+import bagTwo from './images/bag2.png';
+import bagThree from './images/bag3.png';
 import EndPartOne from './images/more.gif';
 import IntroTwo from './images/js-intro2.jpg';
 import EndPartTwo from './images/tony.gif';
@@ -41,13 +49,23 @@ import {
   RoleLayout,
   RoleCircle,
   KeywordCloud,
+  VarImage,
+  CustomParagraph,
 } from './presentation.styled';
 
 preloader({
+  Intro,
+  Me,
   LetsRock,
+  FirstPage,
   TooMuch,
   EndPartOne,
+  IntroTwo,
   EndPartTwo,
+  bagIntro,
+  bagOne,
+  bagTwo,
+  bagThree
 });
 
 // Require CSS
@@ -75,12 +93,12 @@ export default class Presentation extends React.Component {
         theme={theme}
         contentWidth={1200}
       >
-        <Slide bgImage={Intro} bgDarken={0.8}>
+        <Slide bgImage={Intro} bgDarken={0.6}>
           <Heading size={1} fit lineHeight={1} textColor="secondary">
             Fundamenty JavaScriptu
           </Heading>
           <Text margin="24px 0 0" textColor="tertiary" size={2} bold lineHeight={1.5}>
-           <div>Lekcja 1</div>10 dni, które zmieniło świat
+            <span style={{ display: 'block'}}>Lekcja 1</span>10 dni, które zmieniło świat
           </Text>
         </Slide>
         <Slide bgColor="primary">
@@ -334,18 +352,254 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Heading size={5} lineHeight={1} textColor="secondary">
-            Pierwszy kod, czyli czym to się je?
+            Pierwszy kod, czyli jak to wygląda?
           </Heading>
+          <CodePane
+            theme="dark"
+            textSize={36}
+            lang="js"
+            source={require('!raw-loader!./codes/first.example')}
+            margin="64px auto 0 auto"
+          />
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
             Sposoby dodawania JavaScriptu do strony
           </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                1. Liniowo (inline), za pomocą tagu <Code textColor="secondary" textSize={22}>&lt;script /&gt;</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={36}
+                lang="js"
+                source={require('!raw-loader!./codes/inline.example')}
+                margin="32px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Sposoby dodawania JavaScriptu do strony
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                2. Poprzez plik zewnętrzny, także za pomocą tagu <Code textColor="secondary" textSize={22}>&lt;script /&gt;</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={28}
+                lang="js"
+                source={'<script src="index.js" type="text/javascript"></script>'}
+                margin="24px auto 0 auto"
+              />
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Plik <Code textColor="secondary" textSize={22}>index.js</Code>:
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={28}
+                lang="js"
+                source={require('!raw-loader!./codes/external.example')}
+                margin="24px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Gdzie umieszczamy skrypty?
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                1. W sekcji <Code textColor="secondary" textSize={22}>&lt;head /&gt;</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={22}
+                lang="jsx"
+                source={require('!raw-loader!./codes/place1.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Gdzie umieszczamy skrypty?
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                2. Na końcu sekcji <Code textColor="secondary" textSize={22}>&lt;body /&gt;</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={22}
+                lang="jsx"
+                source={require('!raw-loader!./codes/place2.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Gdzie umieszczamy skrypty?
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                3. Tak na prawdę gdzie chcemy (o ile wiemy co robimy)
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/place3.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
             Przecieramy szlaki: Zmienne!
           </Heading>
+          <Text textAlign="left" margin="48px 0 0" textSize={28} textColor="tertiary">
+            <strong>Zmienna</strong> to konstrukcja programistyczna posiadająca trzy podstawowe atrybuty (źródło: wikipedia): <CustomParagraph>- symboliczną nazwę</CustomParagraph><CustomParagraph>- miejsce przechowywania</CustomParagraph><CustomParagraph>- wartość</CustomParagraph>
+          </Text>
+          <Appear>
+            <div>
+              <Text textAlign="left" margin="48px 0 0" textSize={26} textColor="secondary" bold>
+                Możemy powiedzieć, że zmienna to "pojemnik" na dane
+              </Text>
+              <VarImage src={bagIntro} />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Zmienne pod lupą
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Deklaracja zmiennej:
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/var1.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Inicjalizacja wartości zmiennej:
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/var2.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Deklaracja wraz z inicjalizacją:
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/var3.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <Text margin="64px 0 0" textSize={28} textColor="tertiary">
+              słówko-kluczowe &lt;var, let, const&gt; nazwa = wartość;
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="36px 0 0" textSize={28} textColor="secondary">
+              UWAGA! Zmienna niezainicjalizowana ma wartość <strong>undefined</strong>
+            </Text>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Zasady nazywania zmiennych
+          </Heading>
+          <ESLayout>
+            <List textColor="tertiary">
+              <Appear>
+                <ListItem textSize={32}>Nazwa zmiennej nie może zaczynać sie od cyfry</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize={32}>W nazwie zmiennej nie możemy zawrzeć kropki, spacji, przecinka oraz myślnika</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize={32}>Wielkość liter ma znaczenie: zmienna <strong>test</strong> to coś innego niż <strong>Test</strong></ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize={32}>Nazwa zmiennej nie może być słowem zarezerwowanym dla języka JS</ListItem>
+              </Appear>
+            </List>
+          </ESLayout>
+          <Appear>
+            <div>
+              <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="secondary" bold>
+                Słowa zarezerwowane
+              </Text>
+              <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with, class, const, enum, export, extends, import, super, implements, interface, let, package, private, protected, public, static, yield, null, true, false, <strong>NaN</strong>, <strong>Infinity</strong>, <strong>undefined</strong>
+              </Text>
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Zasady nazywania zmiennych
+          </Heading>
+          <Appear>
+            <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Dobrą praktyką jest pisanie nazw zmiennych po angielsku, np. <Code textColor="secondary" textSize={24}>var counter = 0;</Code>
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Powinna opisywać swoje przeznaczenie, np. <Code textColor="secondary" textSize={24}>var x = 0;</Code> średnio nadaje się na zmienną przechowującą sumę dodawania, ale <Code textColor="secondary" textSize={24}>var sum = 0;</Code> już tak
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Często stosuje się notacje "wielbłądzią" camelCase, np. <Code textColor="secondary" textSize={24}>var firstStep = 1;</Code>
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Niektórzy wykorzystują znak podkreślenia aby przekazać, że zmienna istnieje tylko tymczasowo lub jest zmienną prywatną, np. <Code textColor="secondary" textSize={24} style={{ display: 'block' }}>var _temporaryValue = 'Jestem niepozorną zmienną';</Code>
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Znak $ również jest lubiany przez developerów i często określają oni węzły drzewa DOM właśnie z pomocą tego znaku, np. <Code textColor="secondary" textSize={24} style={{ display: 'block' }}>var $body = document.querySelector('body');</Code>
+            </Text>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
@@ -354,7 +608,12 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
-            Typy zmiennych
+            Rodzaje zmiennych
+          </Heading>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Typy danych
           </Heading>
         </Slide>
         <Slide bgColor="primary">
@@ -364,13 +623,51 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
-            Rzutowanie typów - bo miało być dynamicznie!
+            Obiekt console - przyjaciel programisty!
           </Heading>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
-            Komentarze, niech wszyscy wiedzą (w tym ja)!
+            Rzutowanie typów - bo miało być dynamicznie!
           </Heading>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Komentarze, czyli co robił ten kawałek kodu?
+          </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Są to uwagi programistów dotyczące działania poszczególnych kawałków kodu
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={24} textColor="tertiary" bold>
+                Komentarz liniowy
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/comments.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="32px 0 0" textAlign="left" textSize={24} textColor="tertiary" bold>
+                Komentarz blokowy
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/comments2.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
@@ -398,9 +695,31 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading size={5} lineHeight={1} textColor="secondary">
             Podsumowanie wykładu
           </Heading>
+          <ESLayout>
+            <List>
+              <Appear>
+                <ListItem>JavaScript - dynamiczny język stron WWW, odpowiada za zachowanie</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Zmienne - pojemniki na dane</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Typy danych - określają rodzaj zmiennej i decydują o możliwych operacjach</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Komentarze - pozwalają na opisanie fragmentów kodu</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Instrukcje arytmetyczne i logiczne - pozwalają na wykonywanie operacji na zmiennych</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>Instrukcje warunkowe if/else oraz switch - sterują przepływem programu</ListItem>
+              </Appear>
+            </List>
+          </ESLayout>
         </Slide>
         <Slide bgColor="secondary" textColor="primary">
           <Heading textAlign="left" size={5} lineHeight={1}>
@@ -434,7 +753,7 @@ export default class Presentation extends React.Component {
             Fundamenty JavaScriptu
           </Heading>
           <Text margin="24px 0 0" textColor="tertiary" size={2} bold lineHeight={1.5}>
-           <div>Lekcja 2</div>Pętle, funkcje i obiekty
+            <span style={{ display: 'block'}}>Lekcja 1</span>10 dni, które zmieniło świat
           </Text>
         </Slide>
         <Slide bgColor="primary">
