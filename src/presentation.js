@@ -35,6 +35,7 @@ import bagIntro from './images/bag-intro.png';
 import bagOne from './images/bag.png';
 import bagTwo from './images/bag2.png';
 import bagThree from './images/bag3.png';
+import DeepBreath from './images/deepbreath.webp';
 import EndPartOne from './images/more.gif';
 import IntroTwo from './images/js-intro2.jpg';
 import EndPartTwo from './images/tony.gif';
@@ -51,6 +52,8 @@ import {
   KeywordCloud,
   VarImage,
   CustomParagraph,
+  VarTypeBox,
+  VarTypeImage,
 } from './presentation.styled';
 
 preloader({
@@ -65,7 +68,8 @@ preloader({
   bagIntro,
   bagOne,
   bagTwo,
-  bagThree
+  bagThree,
+  DeepBreath,
 });
 
 // Require CSS
@@ -363,6 +367,16 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide bgColor="primary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Proszę pana, ja tu widzę średniki!
+          </Heading>
+          <Appear>
+            <Text margin="64px 0 0" textSize={28} textColor="tertiary" bold>
+              Średniki w JavaScripcie kończą instrukcje i są opcjonalne. Jeżeli skrypt ich nie zawiera, to interpreter sam je doda w sposób automatyczny. Dobrą praktyką jest jednak traktowanie ich jako wymóg, dlatego że mechanizm automatycznego dodawania średników może zadziałać niezgodnie z naszymi oczekiwaniami.
+            </Text>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
           <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
             Sposoby dodawania JavaScriptu do strony
           </Heading>
@@ -602,34 +616,271 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading size={5} textAlign="left" lineHeight={1} textColor="secondary">
             Sposoby deklaracji zmiennych w JS
           </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Z użyciem słówka <Code textColor="secondary" textSize={24}>var</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/var1.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Z użyciem słówka <Code textColor="secondary" textSize={24}>let</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/var4.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Z użyciem słówka <Code textColor="secondary" textSize={24}>const</Code>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={require('!raw-loader!./codes/var5.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Bez słowa kluczowego (zmienna globalna)
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="jsx"
+                source={'zmienna = "Jestem globalna!";'}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
             Rodzaje zmiennych
           </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Zmienne lokalne
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/local.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Rodzaje zmiennych
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Zmienne globalne
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/global.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
             Typy danych
           </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textSize={28} textColor="tertiary" bold>
+              JavaScript jest dynamicznie typowany, ale to nie oznacza, że typy w nim nie istnieją. Każda zmienna do której zostanie przypisana jakaś wartość, będzie miała określony typ, który "zgadnie" interpreter języka.
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="32px 0 0" textSize={28} textColor="tertiary" bold>
+                Typ danych określa co dana zmienna może przechowywać i jakie operacje można na niej wykonać (np. dodawanie na liczbach). Typ danych to w uproszczeniu "rodzaj opakowania" na to co znajdzie się w środku.
+              </Text>
+              <VarTypeBox>
+                <VarTypeImage src={bagOne} />
+                <VarTypeImage src={bagTwo} />
+                <VarTypeImage src={bagThree} />
+              </VarTypeBox>
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
-            Proszę pana, ja tu widzę średniki!
+          <Heading size={5} textAlign="left" lineHeight={1} textColor="secondary">
+            Typy danych
           </Heading>
+          <ESLayout>
+            <Appear>
+              <div>
+                <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                  Typy proste
+                </Text>
+                <List>
+                  <ListItem>Number</ListItem>
+                  <ListItem>String</ListItem>
+                  <ListItem>Boolean</ListItem>
+                  <ListItem>undefined</ListItem>
+                  <ListItem>null</ListItem>
+                  <ListItem>Symbol</ListItem>
+                </List>
+              </div>
+            </Appear>
+            <Appear>
+              <div>
+                <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                  Typy złożone (referencyjne)
+                </Text>
+                <List>
+                  <ListItem>Object</ListItem>
+                  <ListItem>Function</ListItem>
+                  <ListItem>Array</ListItem>
+                  <ListItem>RegExp</ListItem>
+                </List>
+              </div>
+            </Appear>
+          </ESLayout>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Przykłady zmiennych o różnych typach
+          </Heading>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Typu Number
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/vartype1.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Typu String
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/vartype2.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+                Typu Boolean
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/vartype3.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgImage={DeepBreath} />
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
             Obiekt console - przyjaciel programisty!
           </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              - Pozwala "podglądać" zawartość zmiennych
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              - Wynik "podglądania" jest dostępny w zakładce "Console" w narzędziach developerskich
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              - Radzi sobie nie tylko z typami prostymi, ale także i ze złożonymi jak np. tablice
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              - Udostępnia szerego metod do wyświetlania wartości zmiennych, w tym najpopularniejszą metodę <Code textColor="secondary" textSize={24}>log()</Code>
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={24} textColor="secondary" bold>
+                Przykład użycia
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/console.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
-            Rzutowanie typów - bo miało być dynamicznie!
+          <Heading size={6} lineHeight={1} textAlign="left" textColor="secondary">
+            Sprawdzanie typu zmiennej
           </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Do sprawdzania typu zmiennej służy operator <Code textColor="secondary" textSize={24}>typeof</Code>
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="64px 0 0" textAlign="left" textSize={24} textColor="secondary" bold>
+                Przykład użycia
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/typeof.example')}
+                margin="18px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
@@ -683,6 +934,16 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={1} textColor="secondary">
             Operatory logiczne
           </Heading>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} lineHeight={1} textAlign="left" textColor="secondary">
+            Rzutowanie typów - bo miało być dynamicznie!
+          </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+              Rzutowanie jest konwersją jednego typu danych w inny
+            </Text>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
@@ -753,7 +1014,7 @@ export default class Presentation extends React.Component {
             Fundamenty JavaScriptu
           </Heading>
           <Text margin="24px 0 0" textColor="tertiary" size={2} bold lineHeight={1.5}>
-            <span style={{ display: 'block'}}>Lekcja 1</span>10 dni, które zmieniło świat
+            <span style={{ display: 'block'}}>Lekcja 2</span>Pętle, funkcje i trochę o obiektach
           </Text>
         </Slide>
         <Slide bgColor="primary">

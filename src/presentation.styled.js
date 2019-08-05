@@ -158,3 +158,18 @@ export const CustomParagraph = styled.span`
   display: block;
   margin: 10px 0;
 `;
+
+export const VarTypeBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 64px;
+`;
+
+export const VarTypeImage = styled(Image)`
+  && {
+    margin: 0 auto 0 auto;
+    max-width: 240px;
+  }
+`;
