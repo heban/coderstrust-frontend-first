@@ -36,6 +36,7 @@ import bagOne from './images/bag.png';
 import bagTwo from './images/bag2.png';
 import bagThree from './images/bag3.png';
 import DeepBreath from './images/deepbreath.webp';
+import Omg from './images/omg.webp';
 import EndPartOne from './images/more.gif';
 import IntroTwo from './images/js-intro2.jpg';
 import EndPartTwo from './images/tony.gif';
@@ -70,6 +71,7 @@ preloader({
   bagTwo,
   bagThree,
   DeepBreath,
+  Omg,
 });
 
 // Require CSS
@@ -97,7 +99,7 @@ export default class Presentation extends React.Component {
         theme={theme}
         contentWidth={1200}
       >
-        <Slide bgImage={Intro} bgDarken={0.6}>
+        <Slide bgImage={Intro} bgDarken={0.7}>
           <Heading size={1} fit lineHeight={1} textColor="secondary">
             Fundamenty JavaScriptu
           </Heading>
@@ -185,23 +187,23 @@ export default class Presentation extends React.Component {
             Hej, a co to ten ECMA...Script?
           </Heading>
           <Appear>
-            <Text margin="64px 0 0" textColor="tertiary" fit bold>
+            <Text margin="64px 0 0" textColor="tertiary" fit>
               ECMAScript to specyfikacja opisująca obiektowy język ogólnego przeznaczenia
             </Text>
           </Appear>
           <Appear>
-            <Text margin="32px 0 0" textColor="tertiary" fit bold>
+            <Text margin="32px 0 0" textColor="tertiary" fit>
               Można powiedzieć, że jest to "metajęzyk" będący standardem dla innych języków
             </Text>
           </Appear>
           <Appear>
-            <Text margin="32px 0 0" textColor="tertiary" fit bold>
+            <Text margin="32px 0 0" textColor="tertiary" fit>
               I nie da się w nim nic napisać, ponieważ opisuje on tylko składnie!
             </Text>
           </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading fit size={4} lineHeight={1} textColor="secondary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
             Implementacje ECMAScript
           </Heading>
           <Appear>
@@ -371,7 +373,7 @@ export default class Presentation extends React.Component {
             Proszę pana, ja tu widzę średniki!
           </Heading>
           <Appear>
-            <Text margin="64px 0 0" textSize={28} textColor="tertiary" bold>
+            <Text margin="64px 0 0" textSize={28} textColor="tertiary">
               Średniki w JavaScripcie kończą instrukcje i są opcjonalne. Jeżeli skrypt ich nie zawiera, to interpreter sam je doda w sposób automatyczny. Dobrą praktyką jest jednak traktowanie ich jako wymóg, dlatego że mechanizm automatycznego dodawania średników może zadziałać niezgodnie z naszymi oczekiwaniami.
             </Text>
           </Appear>
@@ -590,28 +592,28 @@ export default class Presentation extends React.Component {
             Zasady nazywania zmiennych
           </Heading>
           <Appear>
-            <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="64px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               Dobrą praktyką jest pisanie nazw zmiennych po angielsku, np. <Code textColor="secondary" textSize={24}>var counter = 0;</Code>
             </Text>
           </Appear>
           <Appear>
-            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               Powinna opisywać swoje przeznaczenie, np. <Code textColor="secondary" textSize={24}>var x = 0;</Code> średnio nadaje się na zmienną przechowującą sumę dodawania, ale <Code textColor="secondary" textSize={24}>var sum = 0;</Code> już tak
             </Text>
           </Appear>
           <Appear>
-            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               Często stosuje się notacje "wielbłądzią" camelCase, np. <Code textColor="secondary" textSize={24}>var firstStep = 1;</Code>
             </Text>
           </Appear>
           <Appear>
-            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
-              Niektórzy wykorzystują znak podkreślenia aby przekazać, że zmienna istnieje tylko tymczasowo lub jest zmienną prywatną, np. <Code textColor="secondary" textSize={24} style={{ display: 'block' }}>var _temporaryValue = 'Jestem niepozorną zmienną';</Code>
+            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Niektórzy wykorzystują znak podkreślenia aby przekazać, że zmienna istnieje tylko tymczasowo lub jest zmienną prywatną, np. <Code textColor="secondary" textSize={24} style={{ display: 'block', marginTop: '16px' }}>var _temporaryValue = 'Jestem niepozorną zmienną';</Code>
             </Text>
           </Appear>
           <Appear>
-            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
-              Znak $ również jest lubiany przez developerów i często określają oni węzły drzewa DOM właśnie z pomocą tego znaku, np. <Code textColor="secondary" textSize={24} style={{ display: 'block' }}>var $body = document.querySelector('body');</Code>
+            <Text margin="36px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Znak $ również jest lubiany przez developerów i często określają oni węzły drzewa DOM właśnie z pomocą tego znaku, np. <Code textColor="secondary" textSize={24} style={{ display: 'block', marginTop: '16px' }}>var $body = document.querySelector('body');</Code>
             </Text>
           </Appear>
         </Slide>
@@ -719,13 +721,13 @@ export default class Presentation extends React.Component {
             Typy danych
           </Heading>
           <Appear>
-            <Text margin="48px 0 0" textSize={28} textColor="tertiary" bold>
+            <Text margin="48px 0 0" textSize={28} textColor="tertiary">
               JavaScript jest dynamicznie typowany, ale to nie oznacza, że typy w nim nie istnieją. Każda zmienna do której zostanie przypisana jakaś wartość, będzie miała określony typ, który "zgadnie" interpreter języka.
             </Text>
           </Appear>
           <Appear>
             <div>
-              <Text margin="32px 0 0" textSize={28} textColor="tertiary" bold>
+              <Text margin="32px 0 0" textSize={28} textColor="tertiary">
                 Typ danych określa co dana zmienna może przechowywać i jakie operacje można na niej wykonać (np. dodawanie na liczbach). Typ danych to w uproszczeniu "rodzaj opakowania" na to co znajdzie się w środku.
               </Text>
               <VarTypeBox>
@@ -824,22 +826,22 @@ export default class Presentation extends React.Component {
             Obiekt console - przyjaciel programisty!
           </Heading>
           <Appear>
-            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               - Pozwala "podglądać" zawartość zmiennych
             </Text>
           </Appear>
           <Appear>
-            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               - Wynik "podglądania" jest dostępny w zakładce "Console" w narzędziach developerskich
             </Text>
           </Appear>
           <Appear>
-            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               - Radzi sobie nie tylko z typami prostymi, ale także i ze złożonymi jak np. tablice
             </Text>
           </Appear>
           <Appear>
-            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="32px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               - Udostępnia szerego metod do wyświetlania wartości zmiennych, w tym najpopularniejszą metodę <Code textColor="secondary" textSize={24}>log()</Code>
             </Text>
           </Appear>
@@ -887,7 +889,7 @@ export default class Presentation extends React.Component {
             Komentarze, czyli co robił ten kawałek kodu?
           </Heading>
           <Appear>
-            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary">
               Są to uwagi programistów dotyczące działania poszczególnych kawałków kodu
             </Text>
           </Appear>
@@ -1325,7 +1327,7 @@ x || y;             // true`}
           <Appear>
             <div>
               <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
-                <strong>!</strong> <Word>Negacja (w logice ~)</Word>
+                <strong>!</strong> <Word>Negacja (logiczne NOT)</Word>
               </Text>
               <CodePane
                 theme="dark"
@@ -1338,26 +1340,215 @@ x || y;             // true`}
               />
             </div>
           </Appear>
+          <Appear>
+            <div>
+              <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="secondary">
+                <strong>^</strong> <Word>Alternatywa rozłączna (logiczne XOR)</Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`let x = true, y = false;
+x ^ y;             // true`}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgImage={Omg} bgDarken={0.2}>
+          <Heading size={2} fit lineHeight={1} textColor="secondary">
+            OMG czy to się kiedyś skończy?
+          </Heading>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={6} lineHeight={1} textAlign="left" textColor="secondary">
             Rzutowanie typów - bo miało być dynamicznie!
           </Heading>
           <Appear>
-            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary" bold>
-              Rzutowanie jest konwersją jednego typu danych w inny
+            <Text margin="42px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Rzutowanie jest konwersją jednego typu danych w inny i bardzo często odbywa się ono automatycznie np. w operacjach porównywania.
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={'let text = "Mam " + 18 + " lat";   // wynik: Mam 18 lat'}
+                margin="42px auto 0 auto"
+              />
+              <Text margin="10px 0 0" textAlign="left" textSize={24} textColor="secondary">
+                Dodanie typu string do liczby powoduje zamianę liczby w tekst.
+              </Text>
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={`if ("Ala") {
+  // To się wykona!
+}`}
+                margin="48px auto 0 auto"
+              />
+              <Text margin="10px 0 0" textAlign="left" textSize={24} textColor="secondary">
+                W instrukcjach warunkowych każdy inny typ danych poza Boolean, zostanie automatycznie przekonwertowany na Boolean.
+              </Text>
+            </div>
+          </Appear>
+          <Appear>
+            <Text margin="16px 0 0" textAlign="left" textSize={24} textColor="secondary">
+              Wszystko zostanie rzutowane na <Word>true</Word>, poza następującymi wartościami: <Word>null</Word>, <Word>undefined</Word>, <Word>""</Word>, <Word>0</Word>, <Word>NaN</Word> i <Word>false</Word>. Są to tzw. <Word><strong>falsy values</strong></Word>.
             </Text>
           </Appear>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={4} lineHeight={1} textColor="secondary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
             Instrukcja warunkowa if/else
           </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Pozwala "sterować" przebiegiem programu
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="24px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Instrukcja warunkowa wykona kod, jeżeli spełniony w niej warunek okaże się prawdą
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={24} textColor="secondary">
+                Najprostsza instrukcja warunkowa składa się jedynie z bloku <Word><strong>if</strong></Word>
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/condition.example')}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={24} textColor="secondary">
+                Przykład "nieco" bardziej życiowy:
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/condition2.example')}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading textAlign="left" size={5} lineHeight={1} textColor="secondary">
+            Instrukcja warunkowa if/else
+          </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Instrukcję if, można rozszerzyć o instrukcję else, która wykona się gdy warunek podany w if, nie zostanie spełniony
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/condition3.example')}
+                margin="24px auto 0 auto"
+              />
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="48px 0 0" textAlign="left" textSize={24} textColor="secondary">
+                Można połączyć instrukcję <Word>else</Word> z instrukcją <Word>if</Word> aby móc sprawdzać więcej warunków:
+              </Text>
+              <CodePane
+                theme="dark"
+                textSize={20}
+                lang="js"
+                source={require('!raw-loader!./codes/condition4.example')}
+                margin="10px auto 0 auto"
+              />
+            </div>
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={4} lineHeight={1} textColor="secondary">
             Instrukcja Switch
           </Heading>
+          <Appear>
+            <Text margin="48px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              A co jeżeli będziemy mieć na prawdę sporo warunków do sprawdzenia?
+            </Text>
+          </Appear>
+          <Appear>
+            <CodePane
+              theme="dark"
+              textSize={20}
+              lang="js"
+              source={require('!raw-loader!./codes/condition5.example')}
+              margin="24px auto 0 auto"
+            />
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Instrukcja Switch
+          </Heading>
+          <Appear>
+            <Text margin="42px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              W przypadku wielu warunków lepszym wyborem jest instrukcja switch, która grupuje je w bardziej czytelny sposób
+            </Text>
+          </Appear>
+          <Appear>
+            <CodePane
+              theme="dark"
+              textSize={20}
+              lang="js"
+              source={require('!raw-loader!./codes/condition6.example')}
+              margin="24px auto 0 auto"
+            />
+          </Appear>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={6} textAlign="left" lineHeight={1} textColor="secondary">
+            Operator warunkowy
+          </Heading>
+          <Appear>
+            <Text margin="42px 0 0" textAlign="left" textSize={28} textColor="tertiary">
+              Gdy warunek jest prosty do sprawdzenia, można skorzystać z tzw. operatora warunkowego, który uprości nasz kod do jednej linii
+            </Text>
+          </Appear>
+          <Appear>
+            <CodePane
+              theme="dark"
+              textSize={20}
+              lang="js"
+              source={require('!raw-loader!./codes/condition7.example')}
+              margin="24px auto 0 auto"
+            />
+          </Appear>
+          <Appear>
+            <CodePane
+              theme="dark"
+              textSize={20}
+              lang="js"
+              source={require('!raw-loader!./codes/condition8.example')}
+              margin="24px auto 0 auto"
+            />
+          </Appear>
         </Slide>
         <Slide bgColor="primary">
           <Heading size={5} lineHeight={1} textColor="secondary">
@@ -1413,6 +1604,7 @@ x || y;             // true`}
             </div>
           </Appear>
         </Slide>
+        {/*
         <Slide bgImage={IntroTwo} bgDarken={0.75}>
           <Heading size={1} fit lineHeight={1} textColor="secondary">
             Fundamenty JavaScriptu
@@ -1502,7 +1694,7 @@ x || y;             // true`}
               </Link>
             </div>
           </Appear>
-        </Slide>
+        </Slide> */}
       </Deck>
     );
   }
