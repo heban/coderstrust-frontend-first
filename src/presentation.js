@@ -1010,7 +1010,7 @@ export default class Presentation extends React.Component {
                 theme="dark"
                 textSize={20}
                 lang="js"
-                source={'let x = 10 % 2;  // 0'}
+                source={'let x = 10 ** 2;  // 100'}
                 margin="12px auto 0 auto"
               />
             </div>
